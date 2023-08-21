@@ -12,25 +12,25 @@ namespace FoodiePal.Server.Database
         }
 
         public DbSet<User>Users { get; set; }
-        public DbSet<Rol> Roles{ get; set; }
+        public DbSet<Role> Roles{ get; set; }
         public DbSet<Address>Addresses{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region Roles
-            modelBuilder.Entity<Rol>().HasData
+            modelBuilder.Entity<Role>().HasData
                 (
-                    new Rol()
+                    new Role()
                     {
                         Id = 1,
                         Name = "Admin",
                     },
-                    new Rol()
+                    new Role()
                     {
                         Id = 2,
                         Name = "Free",
                     },
-                    new Rol()
+                    new Role()
                     {
                         Id = 3,
                         Name = "Premium",
@@ -93,35 +93,35 @@ namespace FoodiePal.Server.Database
                     new User()
                     {
                         Id = 1,
-                        Name = "Jorge",
+                        FirstName = "Jorge",
                         LastName1 = "Díaz",
                         LastName2 = "González",
                         Email = "jorge.diaz@fakeMail.com",
                         PasswordHash = Encoding.UTF8.GetBytes("123456789/a"),
                         PasswordSalt = Encoding.UTF8.GetBytes("Salt"),
-                        RolId = 1
+                        RoleId = 1
                     },
                     new User()
                     {
                         Id = 2,
-                        Name = "Natalia",
+                        FirstName = "Natalia",
                         LastName1 = "Murillo",
                         LastName2 = "Palazón",
                         Email = "natalia.murillo@fakeMail.com",
                         PasswordHash = Encoding.UTF8.GetBytes("789456123"),
                         PasswordSalt = Encoding.UTF8.GetBytes("Salty"),
-                        RolId = 3
+                        RoleId = 3
                     },
                     new User()
                     {
                         Id = 3,
-                        Name = "Mar",
+                        FirstName = "Mar",
                         LastName1 = "Casal",
                         LastName2 = "Vilches",
                         Email = "mar.casal@fakeMail.com",
                         PasswordHash = Encoding.UTF8.GetBytes("123456789/a"),
                         PasswordSalt = Encoding.UTF8.GetBytes("FoodiePal"),
-                        RolId = 2
+                        RoleId = 2
                     }
                 ); 
             #endregion AdUsersdresses

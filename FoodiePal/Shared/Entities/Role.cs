@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoodiePal.Shared.Entities
 {
-    public class Rol
+    public class Role
     {
         public int Id { get; set; }
         public string Name { get; set; }

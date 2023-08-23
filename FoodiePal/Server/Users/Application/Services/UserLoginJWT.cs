@@ -45,6 +45,7 @@ namespace FoodiePal.Server.Users.Application.Services
             }
 
             response.Data = CreateToken(user);
+            response.Message = $"Welcome {user.FirstName}, you are in!";
             return response;
 
         }

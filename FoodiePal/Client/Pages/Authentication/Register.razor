@@ -1,0 +1,143 @@
+﻿@page "/register"
+
+@using FoodiePal.Shared.Users.DTOs;
+@using System.Text.RegularExpressions;
+@using System.ComponentModel.DataAnnotations;
+@using FoodiePal.Client.Shared.InputComponents;
+@inject IAuthService authService;
+
+<MudContainer Class="mt-16">
+
+    <MudItem>
+        <MudCard Elevation="25" Class="rounded-lg pb-4">
+
+            <MudCardHeader>
+                <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">Sign in</MudText>
+            </MudCardHeader>
+
+            <MudCardContent>
+                <MudText>
+                    Don´t have an account? <MudLink Href="register">Register here!</MudLink>
+                </MudText>
+
+                <MudForm Model="request" @ref="form" @bind-IsValid=@isValid @bind-Errors=@errors>
+
+
+                    @*Email Input*@
+                    <MudTextField T="string" @bind-Value="request.Email" Label="Email" Required="true" RequiredError="Email is required!"
+                                  Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" />
+
+                    @*Password Input*@
+                    <MudPasswordText @bind-BindTo="@request.Password" Label="Password" HelperText="Choose a strong password" />
+
+
+                    @*Confirm Password Input*@
+                    <MudPasswordText @bind-BindTo="@request.ConfirmPassword" Label="Confirm Password" HelperText="Write the same password as above"/>
+
+                </MudForm>
+            </MudCardContent>
+
+            <MudCardActions>
+                <div class="d-flex align-center justify-space-between">
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(async()=> await Submit())" Disabled="@(!isValid)" Class="ml-auto">
+                        Sign in
+                        @if (isLogging)
+                        {
+                            <MudSpacer></MudSpacer>
+                            <MudProgressCircular Class="mx-2" Color="Color.Info" Size="Size.Small" Indeterminate="true" />
+                        }
+                    </MudButton>
+                </div>
+            </MudCardActions>
+        </MudCard>
+
+       
+         
+        <MudText Typo="Typo.subtitle2" Color="Color.Error">@logMessage</MudText>
+            
+        
+       
+
+    </MudItem>
+</MudContainer>
+@code {
+    MudForm form = new MudForm();
+
+    bool isValid;
+    bool isLogging;
+    bool isVisiblePassword;
+    bool isVisibleConfirmPassword;
+
+    string[] errors = { };
+    string logMessage = "";
+
+    InputType passwordInput = InputType.Password;
+    InputType confirmPasswordInput = InputType.Password;
+
+    string passwordInputIcon = Icons.Material.Filled.VisibilityOff;
+    string confirmPasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+
+    MudTextField<string> passwordField = new MudTextField<string>();
+    MudTextField<string> confirmPassword = new MudTextField<string>();
+
+
+    UserRegisterRequest request = new UserRegisterRequest();
+
+    private IEnumerable<string> PasswordStrength(string password)
+    {
+
+        var result = new List<string>();
+
+        if (string.IsNullOrWhiteSpace(password))
+        {
+            result.Add("Password is required!");
+        }
+        if (password.Length < 8)
+            result.Add("Password must be at least of length 8");
+
+        if (!Regex.IsMatch(password, @"[A-Z]"))
+            result.Add("Password must contain at least one capital letter");
+
+        if (!Regex.IsMatch(password, @"[a-z]"))
+            result.Add("Password must contain at least one lowercase letter");
+
+        if (!Regex.IsMatch(password, @"[0-9]"))
+            result.Add("Password must contain at least one digit");
+
+        return result;
+    }
+
+    private void ChangePasswordVisibility(InputType passwordInputType, string passwordInputIcon, bool isShow)
+    {
+        @if (isShow)
+        {
+            isShow = false;
+            passwordInputIcon = Icons.Material.Filled.VisibilityOff;
+            passwordInputType= InputType.Password;
+        }
+        else
+        {
+            isShow = true;
+            passwordInputIcon = Icons.Material.Filled.Visibility;
+            passwordInputType = InputType.Text;
+        }
+    }
+
+    private async Task Submit()
+    {
+        await form.Validate();
+
+
+        if (!form.IsValid) { return; }
+
+        isLogging = true;
+
+        var response = await authService.RegisterAsync(request);
+
+        isLogging = false;
+
+        logMessage = response.Message;
+
+
+    }
+}

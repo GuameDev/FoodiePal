@@ -29,7 +29,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<IUserLogin,UserLoginJWT>();
 builder.Services.AddScoped<IUserRegister, UserRegister>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 
 //TODO: Make and extension class to move all this logic for config swagger
@@ -142,7 +142,7 @@ static void SwaggerConfiguration(WebApplicationBuilder builder)
     var info = new OpenApiInfo()
     {
         Version = "v1",
-        Title = "Minimal API - JWT Authentication with Swagger demo",
+        Title = "Foodie Pal - Minimal API",
         Description = "Implementing JWT Authentication in Minimal API",
         //TermsOfService = new Uri(""),
         Contact = contact,

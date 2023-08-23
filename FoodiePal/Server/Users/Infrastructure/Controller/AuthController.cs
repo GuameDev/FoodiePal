@@ -8,23 +8,23 @@ namespace FoodiePal.Server.Users.Infrastructure.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class AuthController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IAuthService _authService;
 
-        public UserController(IUserService userService)
+        public AuthController(IAuthService authService)
         {
-            _userService = userService;
+            _authService = authService;
         }
 
         [HttpPost("login")]
         public async Task<ActionResult<ServiceResponse<UserLoginResponse>>> Login(UserLoginRequest request)
         {
-            var result = await _userService.LoginAsync(request);
+            var result = await _authService.LoginAsync(request);
       
             if(!result.Success || result.Data == null)
             {
-                return BadRequest();
+                return BadRequest(result);
             }
 
             return Ok(result);
@@ -33,7 +33,7 @@ namespace FoodiePal.Server.Users.Infrastructure.Controller
         [HttpPost("register")]
         public async Task<ActionResult<ServiceResponse<UserRegisterResponse>>> Register(UserRegisterRequest request)
         {
-            var result = await _userService.RegisterAsync(request);
+            var result = await _authService.RegisterAsync(request);
 
             if (!result.Success || result.Data == null)
             {

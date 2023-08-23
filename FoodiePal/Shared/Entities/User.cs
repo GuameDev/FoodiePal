@@ -9,10 +9,10 @@ namespace FoodiePal.Shared.Entities
     public class User
     {
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName1 { get; set; }
-        public string LastName2 { get; set; }
-        public string Email { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName1 { get; set; } = string.Empty;
+        public string LastName2 { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public DateTime DateCreated { get; set; } = DateTime.Now;

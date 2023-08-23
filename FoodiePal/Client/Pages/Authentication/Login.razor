@@ -1,0 +1,86 @@
+﻿@using System.ComponentModel.DataAnnotations;
+@using System.Text.RegularExpressions;
+@using FoodiePal.Shared.Users.DTOs;
+@using FoodiePal.Client.Shared.InputComponents;
+
+@inject IAuthService authService;
+@page "/login"
+
+<MudContainer Class="mt-16">
+
+    <MudItem>
+            <MudCard Elevation="25" Class="rounded-lg pb-4">
+
+            <MudCardHeader>
+                <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">Log in</MudText>
+            </MudCardHeader>
+
+            <MudCardContent>
+                <MudText>
+                    Don´t have an account? <MudLink Href="register">Register here!</MudLink>
+                </MudText>
+
+                <MudForm Model="request" @ref="form" @bind-IsValid=@isValid @bind-Errors=@errors>
+
+                    <MudTextField T="string" @bind-Value="request.Email" Label="Email" Required="true" RequiredError="Email is required!"
+                                      Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" />
+
+                    <MudPasswordText @bind-BindTo="@request.Password" Label="Password" HelperText="Choose a strong password"/>
+                    
+                </MudForm>
+            </MudCardContent>
+
+            <MudCardActions>
+                <div class="d-flex align-center justify-space-between">
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(async()=> await Submit())" Disabled="@(!isValid)" Class="ml-auto">
+                        Login
+                        @if (isLogging)
+                        {
+                            <MudSpacer></MudSpacer>
+                            <MudProgressCircular Class="mx-2" Color="Color.Info" Size="Size.Small" Indeterminate="true" />
+                        }
+                    </MudButton>
+                </div>
+            </MudCardActions>
+        </MudCard>
+
+            <MudText>@logMessage</MudText>
+
+
+        </MudItem>
+</MudContainer>
+@code {
+    MudForm form = new MudForm();
+
+    bool isValid;
+    bool isLogging;
+  
+
+    string[] errors = { };
+    string logMessage = "";
+
+
+    UserLoginRequest request = new UserLoginRequest();
+
+   
+
+    
+
+    private async Task Submit()
+    {
+        await form.Validate();
+
+
+        if (!form.IsValid){return;}
+
+        isLogging = true;
+
+        var response = await authService.LoginAsync(request);
+
+        isLogging = false;
+ 
+        logMessage = response.Message;
+        
+
+    }
+}

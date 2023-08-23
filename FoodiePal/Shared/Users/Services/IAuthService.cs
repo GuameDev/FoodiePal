@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FoodiePal.Shared.Users.Services
 {
-    public interface IUserService
+    public interface IAuthService
     {
         Task<ServiceResponse<UserLoginResponse>>LoginAsync(UserLoginRequest request);
         Task<ServiceResponse<UserRegisterResponse>> RegisterAsync(UserRegisterRequest request);

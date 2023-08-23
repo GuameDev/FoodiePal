@@ -4,12 +4,12 @@ using FoodiePal.Shared.Users.Services;
 
 namespace FoodiePal.Server.Users.Application.Services
 {
-    public class UserService : IUserService
+    public class AuthService : IAuthService
     {
         private readonly IUserLogin _userLogin;
         private readonly IUserRegister _userRegister;
 
-        public UserService(IUserLogin userLogin, IUserRegister userRegister)
+        public AuthService(IUserLogin userLogin, IUserRegister userRegister)
         {
             _userLogin = userLogin;
             _userRegister = userRegister;

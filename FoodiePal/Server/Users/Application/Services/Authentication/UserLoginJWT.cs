@@ -1,5 +1,6 @@
 ﻿using FoodiePal.Server.Database;
 using FoodiePal.Shared;
+using FoodiePal.Shared.Base;
 using FoodiePal.Shared.Entities;
 using FoodiePal.Shared.Users.DTOs;
 using FoodiePal.Shared.Users.Repository;
@@ -15,12 +16,12 @@ namespace FoodiePal.Server.Users.Application.Services
 {
     public class UserLoginJWT : IUserLogin
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _configuration;
 
-        public UserLoginJWT(IUserRepository userRepository, IConfiguration configuration)
+        public UserLoginJWT(IUnitOfWork unitOfWork, IConfiguration configuration)
         {
-            _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
             _configuration = configuration;
         }
 
@@ -28,7 +29,7 @@ namespace FoodiePal.Server.Users.Application.Services
         {
             var response = new ServiceResponse<UserLoginResponse>();
 
-            var user = await _userRepository.GetUserByEmailAsync(request.Email);
+            var user = await _unitOfWork.UserRepository.GetUserByEmailAsync(request.Email);
 
             if (user is null ) 
             {

@@ -1,4 +1,5 @@
 ﻿using FoodiePal.Shared;
+using FoodiePal.Shared.Base;
 using FoodiePal.Shared.Entities;
 using FoodiePal.Shared.Users.DTOs;
 using FoodiePal.Shared.Users.Repository;
@@ -10,15 +11,16 @@ namespace FoodiePal.Server.Users.Application.Services
 {
     public class UserRegister : IUserRegister
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public UserRegister(IUserRepository userRepository)
+        public UserRegister(IUnitOfWork unitOfWork)
         {
-            _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
         }
+
         public async Task<ServiceResponse<UserRegisterResponse>> RegisterAsync(UserRegisterRequest request)
         {
-            if(await _userRepository.UserExistAsync(request.Email))
+            if(await _unitOfWork.UserRepository.UserExistAsync(request.Email))
             {
                 return new ServiceResponse<UserRegisterResponse>()
                 {
@@ -40,8 +42,8 @@ namespace FoodiePal.Server.Users.Application.Services
                 PasswordHash = passwordHash,
                 PasswordSalt = salt
             };
-            await _userRepository.InsertUserAsync(user);
-            await _userRepository.SaveAsync();
+            await _unitOfWork.UserRepository.AddAsync(user);
+            await _unitOfWork.SaveAsync();
 
 
             return new ServiceResponse<UserRegisterResponse>()

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoodiePal.Shared.Users.Services
+namespace FoodiePal.Shared.Users.Services.Authentication
 {
     public interface IUserLogin
     {

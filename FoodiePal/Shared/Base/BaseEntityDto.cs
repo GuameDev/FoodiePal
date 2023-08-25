@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FoodiePal.Shared.Base
 {
-    public class BaseEntity
+    public class BaseEntityDto
     {
         public int Id { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;
@@ -17,13 +17,7 @@ namespace FoodiePal.Shared.Base
         //Flags
         public bool Visible { get; set; } = true;
         public bool Deleted { get; set; } = false;
-
-        //Las flags que no se mapean quizá tenga sentido dejarlas en los DTO y
-        //sacarlas de las entidades de dominio, ya que realmente no van a ser persisitdas
-        [NotMapped]
         public bool Editing { get; set; } = false;
-
-        [NotMapped]
         public bool IsNew { get; set; } = false;
     }
 }

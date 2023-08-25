@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoodiePal.Shared.Users.Services
+namespace FoodiePal.Shared.Users.Services.Authentication
 {
     public interface IAuthService
     {
-        Task<ServiceResponse<UserLoginResponse>>LoginAsync(UserLoginRequest request);
+        Task<ServiceResponse<UserLoginResponse>> LoginAsync(UserLoginRequest request);
         Task<ServiceResponse<UserRegisterResponse>> RegisterAsync(UserRegisterRequest request);
     }
 }

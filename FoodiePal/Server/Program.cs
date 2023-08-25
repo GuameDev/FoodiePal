@@ -1,6 +1,9 @@
 ﻿using FoodiePal.Server.Database;
+using FoodiePal.Server.Extensions;
+using FoodiePal.Server.Recipes.Repositories;
 using FoodiePal.Server.Users.Application.Services;
 using FoodiePal.Server.Users.Infrastructure.Repositories;
+using FoodiePal.Shared.Recipes.Repository;
 using FoodiePal.Shared.Users.Repository;
 using FoodiePal.Shared.Users.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -25,11 +28,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevelopmentConnection")));
 
 
+builder.Services.SetupUnitOfWork();
+
 //Registration of dependencies 
-builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<IUserLogin,UserLoginJWT>();
 builder.Services.AddScoped<IUserRegister, UserRegister>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+
+//builder.Services.AddScoped<IUserRepository,UserRepository>();
+//builder.Services.AddScoped<IRecipeRepository,RecipeRepository >();
 
 
 //TODO: Make and extension class to move all this logic for config swagger

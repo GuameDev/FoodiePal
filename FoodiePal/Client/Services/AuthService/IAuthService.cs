@@ -7,5 +7,7 @@ namespace FoodiePal.Client.Services
     {
         Task<ServiceResponse<UserLoginResponse>> LoginAsync(UserLoginRequest request);
         Task<ServiceResponse<UserRegisterResponse>> RegisterAsync(UserRegisterRequest request);
+
+        Task LogoutAsync();
     }
 }

@@ -10,6 +10,7 @@
 
     <MudItem>
         <MudCard Elevation="25" Class="rounded-lg pb-4">
+           
 
             <MudCardHeader>
                 <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">Sign in</MudText>
@@ -22,18 +23,18 @@
 
                 <MudForm Model="request" @ref="form" @bind-IsValid=@isValid @bind-Errors=@errors>
 
-
                     @*Email Input*@
                     <MudTextField T="string" @bind-Value="request.Email" Label="Email" Required="true" RequiredError="Email is required!"
-                                  Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" />
+                                  Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" MaxLength="50"
+                                  For="(()=>request.Email)"/>
 
                     @*Password Input*@
-                    <MudPasswordText @bind-BindTo="@request.Password" Label="Password" HelperText="Choose a strong password" />
+                    <MudPasswordText @bind-BindTo="@request.Password" Label="Password" HelperText="Choose a strong password"  />
 
 
                     @*Confirm Password Input*@
-                    <MudPasswordText @bind-BindTo="@request.ConfirmPassword" Label="Confirm Password" HelperText="Write the same password as above"/>
-
+                    <MudPasswordText @bind-BindTo="@request.ConfirmPassword" For="@request.ConfirmPassword" Label="Confirm Password" HelperText="Write the same password as above"/>
+                  
                 </MudForm>
             </MudCardContent>
 

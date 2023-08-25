@@ -1,4 +1,5 @@
-﻿using FoodiePal.Shared;
+﻿using Blazored.LocalStorage;
+using FoodiePal.Shared;
 using FoodiePal.Shared.Users.DTOs;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Net.Http.Json;
@@ -10,11 +11,13 @@ namespace FoodiePal.Client.Services
 
         private readonly HttpClient _http;
         private readonly AuthenticationStateProvider _authStateProvider;
+        private readonly ILocalStorageService _localStorage;
 
-        public AuthService(HttpClient http, AuthenticationStateProvider authStateProvider)
+        public AuthService(HttpClient http, AuthenticationStateProvider authStateProvider, ILocalStorageService localStorage)
         {
             _http = http;
             _authStateProvider = authStateProvider;
+            _localStorage = localStorage;
         }
         public async Task<ServiceResponse<UserLoginResponse>> LoginAsync(UserLoginRequest request)
         {
@@ -30,6 +33,12 @@ namespace FoodiePal.Client.Services
         public async Task<bool> IsUserAuthenticated()
         {
             return (await _authStateProvider.GetAuthenticationStateAsync()).User.Identity.IsAuthenticated;
+        }
+
+        public async Task LogoutAsync()
+        {
+            await _localStorage.RemoveItemAsync("authToken");
+            await _authStateProvider.GetAuthenticationStateAsync();
         }
     }
 }

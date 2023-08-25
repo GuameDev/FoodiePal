@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodiePal.Shared.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace FoodiePal.Shared.Entities
 {
-    public class Address
+    public class Address:BaseEntity
     {
-        public int Id { get; set; }
         public int UserId { get; set; }
         public string FirstName{ get; set; } = string.Empty;
         public string LastName{ get; set; } = string.Empty;

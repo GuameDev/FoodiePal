@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoodiePal.Shared.Repositories
+namespace FoodiePal.Shared.Base
 {
-    public interface IBaseRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity> where TEntity : class
     {
         Task AddAsync(TEntity entity);
         Task UpdateAsync(TEntity entity);
@@ -20,4 +20,4 @@ namespace FoodiePal.Shared.Repositories
         Task<bool> ExistAsync(Expression<Func<TEntity, bool>> predicate);
     }
 }
-}
+

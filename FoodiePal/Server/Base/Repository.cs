@@ -1,5 +1,4 @@
 ﻿using FoodiePal.Shared.Base;
-using FoodiePal.Shared.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

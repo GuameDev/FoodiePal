@@ -167,13 +167,13 @@ namespace FoodiePal.Server.Database
                      Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
                      Name = "Áutor número 1"
                  },
-                             new Author()
-                             {
-                                 Id = 2,
-                                 Email = "Author2@fakeEmail.com",
-                                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-                                 Name = "Áutor número 2"
-                             }
+                new Author()
+                {
+                    Id = 2,
+                    Email = "Author2@fakeEmail.com",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+                    Name = "Áutor número 2"
+                }
                 );
             #endregion Authors
 

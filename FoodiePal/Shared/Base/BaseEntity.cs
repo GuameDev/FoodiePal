@@ -10,6 +10,9 @@ namespace FoodiePal.Shared.Base
     public class BaseEntity
     {
         public int Id { get; set; }
+        public DateTime CreationDate { get; set; } = DateTime.Now;
+        public DateTime? UpdateDate { get; set; }
+
 
         //Flags
         public bool Visible { get; set; } = true;

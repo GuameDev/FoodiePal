@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FoodiePal.Shared.Base;
 using FoodiePal.Shared.Enums;
 
 namespace FoodiePal.Shared.Entities
 {
-    public class Ingredient
+    public class Ingredient:BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public double Quantity { get; set; }
         public UnitType UnitOfMeasurement { get; set; }
-
 
         //FKs
         public int ProductId { get; set; }

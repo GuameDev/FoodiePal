@@ -1,0 +1,39 @@
+﻿@inject IAuthService authService
+@inject NavigationManager navigationManager
+
+
+<MudMenu Icon="@Icons.Material.Filled.Person" Color="Color.Inherit" Dense="true" >
+   <AuthorizeView>
+       <Authorized>
+            <MudMenuItem>
+                <MudLink Href="/profile">Profile</MudLink>
+            </MudMenuItem>
+
+            <MudMenuItem>
+                <MudLink Href="/recipes">My Recipes</MudLink>
+            </MudMenuItem>
+
+            <MudDivider DividerType="DividerType.FullWidth" />
+            <MudMenuItem>
+                <MudButton OnClick="(()=>Logout())">Logout</MudButton>
+            </MudMenuItem>
+       </Authorized>
+       <NotAuthorized>
+            <MudMenuItem>
+                <MudLink Href="/login">Login</MudLink>
+            </MudMenuItem>
+
+       </NotAuthorized>
+        
+   </AuthorizeView>
+    
+
+</MudMenu>
+
+@code {
+    public async Task Logout()
+    {
+        await authService.LogoutAsync();
+        navigationManager.NavigateTo("");
+    }
+}

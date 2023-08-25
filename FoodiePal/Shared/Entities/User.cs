@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,22 +21,39 @@ namespace FoodiePal.Shared.Entities
         public int RoleId { get; set; } = 2;
         public Role Role { get; set; }
 
+
+
+        //Flags
+        public bool Visible { get; set; } = true;
+        public bool Deleted { get; set; } = false;
+
+        [NotMapped]
+        public bool Editing { get; set; } = false;
+
+        [NotMapped]
+        public bool IsNew { get; set; } = false;
+
+
         //Constructor
         public User(){}
         public User
             (
-            int id, 
-            string name, 
-            string lastName1, 
-            string lastName2, 
-            string email, 
-            byte[] passwordHash, 
-            byte[] passwordSalt, 
-            DateTime dateCreated, 
-            ICollection<Address> addresses, 
-            int roleId, 
+            int id,
+            string name,
+            string lastName1,
+            string lastName2,
+            string email,
+            byte[] passwordHash,
+            byte[] passwordSalt,
+            DateTime dateCreated,
+            ICollection<Address> addresses,
+            int roleId,
             Role role
-            )
+,
+            bool visible,
+            bool deleted,
+            bool editing,
+            bool isNew)
         {
             Id = id;
             FirstName = name;
@@ -48,6 +66,10 @@ namespace FoodiePal.Shared.Entities
             Addresses = addresses;
             RoleId = roleId;
             Role = role;
+            Visible = visible;
+            Deleted = deleted;
+            Editing = editing;
+            IsNew = isNew;
         }
     }
 }

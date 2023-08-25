@@ -4,6 +4,7 @@ using FoodiePal.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodiePal.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230825181739_CreateRecipeEntity")]
+    partial class CreateRecipeEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -148,22 +151,6 @@ namespace FoodiePal.Server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-                            Email = "Author1@fakeEmail.com",
-                            Name = "Áutor número 1"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-                            Email = "Author2@fakeEmail.com",
-                            Name = "Áutor número 2"
-                        });
                 });
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.Category", b =>
@@ -185,26 +172,6 @@ namespace FoodiePal.Server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Breakfast",
-                            Url = "breakfast"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Meals",
-                            Url = "meals"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Dinner",
-                            Url = "dinner"
-                        });
                 });
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.Ingredient", b =>
@@ -238,26 +205,6 @@ namespace FoodiePal.Server.Migrations
                     b.HasIndex("RecipeId");
 
                     b.ToTable("Ingredients");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Avena",
-                            ProductId = 1,
-                            Quantity = 50.0,
-                            RecipeId = 1,
-                            UnitOfMeasurement = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Yogur griego",
-                            ProductId = 2,
-                            Quantity = 0.14999999999999999,
-                            RecipeId = 1,
-                            UnitOfMeasurement = 2
-                        });
                 });
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.Product", b =>
@@ -284,22 +231,6 @@ namespace FoodiePal.Server.Migrations
                     b.HasIndex("ProductTypeId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            Name = "Avena",
-                            ProductTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            Name = "Yogur griego",
-                            ProductTypeId = 3
-                        });
                 });
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.ProductType", b =>
@@ -321,32 +252,6 @@ namespace FoodiePal.Server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            Name = "Verduras"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            Name = "Frutas"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            Name = "Yogur"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            Name = "Cereales"
-                        });
                 });
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.Recipe", b =>
@@ -385,18 +290,6 @@ namespace FoodiePal.Server.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Recipes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            CreationDate = new DateTime(2023, 8, 25, 20, 57, 36, 192, DateTimeKind.Local).AddTicks(5577),
-                            Deleted = false,
-                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            Name = "Receta de prueba",
-                            Visible = true
-                        });
                 });
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.Role", b =>
@@ -457,29 +350,6 @@ namespace FoodiePal.Server.Migrations
                     b.HasIndex("RecipeId");
 
                     b.ToTable("Steps");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Coge un bol y echa 150 gramos de yogur griego",
-                            Name = "Destapa el yogur griego",
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Echa 50 gramos de avena en el bol",
-                            Name = "Echa la avena",
-                            RecipeId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "¡Remuevelo todo y prepárate para un desayuno lleno de energía!",
-                            Name = "¡A comer!",
-                            RecipeId = 1
-                        });
                 });
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.User", b =>
@@ -536,7 +406,7 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2023, 8, 25, 20, 57, 36, 192, DateTimeKind.Local).AddTicks(5420),
+                            DateCreated = new DateTime(2023, 8, 25, 20, 17, 38, 913, DateTimeKind.Local).AddTicks(2079),
                             Deleted = false,
                             Email = "jorge.diaz@fakeMail.com",
                             FirstName = "Jorge",
@@ -550,7 +420,7 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 2,
-                            DateCreated = new DateTime(2023, 8, 25, 20, 57, 36, 192, DateTimeKind.Local).AddTicks(5469),
+                            DateCreated = new DateTime(2023, 8, 25, 20, 17, 38, 913, DateTimeKind.Local).AddTicks(2137),
                             Deleted = false,
                             Email = "natalia.murillo@fakeMail.com",
                             FirstName = "Natalia",
@@ -564,7 +434,7 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 3,
-                            DateCreated = new DateTime(2023, 8, 25, 20, 57, 36, 192, DateTimeKind.Local).AddTicks(5474),
+                            DateCreated = new DateTime(2023, 8, 25, 20, 17, 38, 913, DateTimeKind.Local).AddTicks(2142),
                             Deleted = false,
                             Email = "mar.casal@fakeMail.com",
                             FirstName = "Mar",

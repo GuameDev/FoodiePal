@@ -1,8 +1,8 @@
 ﻿using FoodiePal.Shared;
 using FoodiePal.Shared.Users.DTOs;
-using FoodiePal.Shared.Users.Services;
+using FoodiePal.Shared.Users.Services.Authentication;
 
-namespace FoodiePal.Server.Users.Application.Services
+namespace FoodiePal.Server.Users.Application.Services.Authentication
 {
     public class AuthService : IAuthService
     {
@@ -16,7 +16,7 @@ namespace FoodiePal.Server.Users.Application.Services
         }
         public async Task<ServiceResponse<UserLoginResponse>> LoginAsync(UserLoginRequest request)
         {
-           return await _userLogin.LoginAsync(request);
+            return await _userLogin.LoginAsync(request);
         }
 
         public async Task<ServiceResponse<UserRegisterResponse>> RegisterAsync(UserRegisterRequest request)

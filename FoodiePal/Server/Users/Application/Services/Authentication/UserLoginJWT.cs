@@ -4,7 +4,7 @@ using FoodiePal.Shared.Base;
 using FoodiePal.Shared.Entities;
 using FoodiePal.Shared.Users.DTOs;
 using FoodiePal.Shared.Users.Repository;
-using FoodiePal.Shared.Users.Services;
+using FoodiePal.Shared.Users.Services.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -12,7 +12,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace FoodiePal.Server.Users.Application.Services
+namespace FoodiePal.Server.Users.Application.Services.Authentication
 {
     public class UserLoginJWT : IUserLogin
     {
@@ -31,14 +31,14 @@ namespace FoodiePal.Server.Users.Application.Services
 
             var user = await _unitOfWork.UserRepository.GetUserByEmailAsync(request.Email);
 
-            if (user is null ) 
+            if (user is null)
             {
                 response.Success = false;
                 response.Message = "User not found";
                 return response;
             }
 
-            if(!EnsurePasswordHashIsValid(request.Password,user.PasswordHash,user.PasswordSalt))
+            if (!EnsurePasswordHashIsValid(request.Password, user.PasswordHash, user.PasswordSalt))
             {
                 response.Success = false;
                 response.Message = "Wrong password";
@@ -67,8 +67,8 @@ namespace FoodiePal.Server.Users.Application.Services
 
             var expirationDate = DateTime.Now.AddDays(1);
             var token = new JwtSecurityToken(
-                claims:claims,
-                expires:expirationDate,
+                claims: claims,
+                expires: expirationDate,
                 signingCredentials: creds);
 
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
@@ -83,7 +83,7 @@ namespace FoodiePal.Server.Users.Application.Services
         //TODO: Auth Service? 
         private bool EnsurePasswordHashIsValid(string password, byte[] passwordHash, byte[] passwordSalt)
         {
-            using(var hmac =new HMACSHA512(passwordSalt))
+            using (var hmac = new HMACSHA512(passwordSalt))
             {
                 var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
                 return computedHash.SequenceEqual(passwordHash);

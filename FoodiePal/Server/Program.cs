@@ -2,16 +2,19 @@
 using FoodiePal.Server.Extensions;
 using FoodiePal.Server.Recipes.Repositories;
 using FoodiePal.Server.Users.Application.Services;
+using FoodiePal.Server.Users.Application.Services.Authentication;
 using FoodiePal.Server.Users.Infrastructure.Repositories;
 using FoodiePal.Shared.Recipes.Repository;
 using FoodiePal.Shared.Users.Repository;
 using FoodiePal.Shared.Users.Services;
+using FoodiePal.Shared.Users.Services.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,10 +33,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.SetupUnitOfWork();
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
 //Registration of dependencies 
 builder.Services.AddScoped<IUserLogin,UserLoginJWT>();
 builder.Services.AddScoped<IUserRegister, UserRegister>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IGetAllUsers, GetAllUsers>();
+builder.Services.AddScoped<IUserService,UserService >();
+
 
 
 //builder.Services.AddScoped<IUserRepository,UserRepository>();

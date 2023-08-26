@@ -15,6 +15,14 @@ namespace FoodiePal.Server.Users.Infrastructure.Repositories
             _entities = entities;
         }
 
+        public async Task<List<User>> GetAllUsersAsync()
+        {
+            return _entities
+                .Include(x=>x.Addresses)
+                .Include(x => x.Role)
+                .ToList();
+        }
+
         public async Task<User> GetUserByEmailAsync(string email)
         {
             var entity = await _entities.Include(user => user.Role)

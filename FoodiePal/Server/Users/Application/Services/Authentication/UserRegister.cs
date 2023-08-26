@@ -3,11 +3,11 @@ using FoodiePal.Shared.Base;
 using FoodiePal.Shared.Entities;
 using FoodiePal.Shared.Users.DTOs;
 using FoodiePal.Shared.Users.Repository;
-using FoodiePal.Shared.Users.Services;
+using FoodiePal.Shared.Users.Services.Authentication;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace FoodiePal.Server.Users.Application.Services
+namespace FoodiePal.Server.Users.Application.Services.Authentication
 {
     public class UserRegister : IUserRegister
     {
@@ -20,7 +20,7 @@ namespace FoodiePal.Server.Users.Application.Services
 
         public async Task<ServiceResponse<UserRegisterResponse>> RegisterAsync(UserRegisterRequest request)
         {
-            if(await _unitOfWork.UserRepository.UserExistAsync(request.Email))
+            if (await _unitOfWork.UserRepository.UserExistAsync(request.Email))
             {
                 return new ServiceResponse<UserRegisterResponse>()
                 {
@@ -59,10 +59,10 @@ namespace FoodiePal.Server.Users.Application.Services
 
         private void GeneratePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
-            using(var hmac = new HMACSHA512())
+            using (var hmac = new HMACSHA512())
             {
                 passwordSalt = hmac.Key;
-                passwordHash=hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+                passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
         }
     }

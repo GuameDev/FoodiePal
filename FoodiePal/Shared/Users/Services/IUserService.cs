@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodiePal.Shared.Users.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace FoodiePal.Shared.Users.Services
 {
     public interface IUserService
     {
-        Task<ServiceResponse<List<UserDto>>> GetAllUsers();
+        Task<ServiceResponse<List<UserDto>>> GetAllUsersAsync();
+      
     }
 }

@@ -1,6 +1,6 @@
 ﻿using FoodiePal.Shared;
 using FoodiePal.Shared.Users.DTOs;
-using FoodiePal.Shared.Users.Services;
+using FoodiePal.Shared.Users.Services.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

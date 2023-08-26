@@ -14,7 +14,7 @@ namespace FoodiePal.Shared.Users.DTOs
         public string LastName1 { get; set; } = string.Empty;
         public string LastName2 { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
-        public ICollection<Address> Addresses { get; set; } = new List<Address>();
-        public Role Role { get; set; }
+        public RoleDto Role { get; set; }
+        public ICollection<AddressDto> Addresses { get; set; } = new List<AddressDto>();
     }
 }

@@ -4,6 +4,7 @@ using FoodiePal.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodiePal.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230826132240_CreateMassUnits")]
+    partial class CreateMassUnits
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,12 +70,12 @@ namespace FoodiePal.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Street")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -96,11 +99,10 @@ namespace FoodiePal.Server.Migrations
                             Id = 1,
                             City = "Madrid",
                             Country = "España",
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3387),
                             Deleted = false,
                             FirstName = "Jorge",
                             LastName = "Díaz",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9068),
                             Street = "Calle Valeriano Alcalá",
                             UserId = 1,
                             Visible = true,
@@ -111,11 +113,10 @@ namespace FoodiePal.Server.Migrations
                             Id = 2,
                             City = "Madrid",
                             Country = "España",
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3392),
                             Deleted = false,
                             FirstName = "María",
                             LastName = "Martínez",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9073),
                             Street = "Calle Valeriano Alcalá",
                             UserId = 1,
                             Visible = true,
@@ -126,11 +127,10 @@ namespace FoodiePal.Server.Migrations
                             Id = 3,
                             City = "Murcia",
                             Country = "España",
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3394),
                             Deleted = false,
                             FirstName = "Natalia",
                             LastName = "Murillo",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9076),
                             Street = "Calle Paco Palazón",
                             UserId = 2,
                             Visible = true,
@@ -141,11 +141,10 @@ namespace FoodiePal.Server.Migrations
                             Id = 4,
                             City = "Murcia",
                             Country = "España",
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3397),
                             Deleted = false,
                             FirstName = "César",
                             LastName = "Sánchez",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9078),
                             Street = "Calle Paco Palazón",
                             UserId = 2,
                             Visible = true,
@@ -175,12 +174,12 @@ namespace FoodiePal.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
@@ -193,22 +192,20 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3530),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
                             Email = "Author1@fakeEmail.com",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9169),
                             Name = "Áutor número 1",
                             Visible = true
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3533),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
                             Email = "Author2@fakeEmail.com",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9173),
                             Name = "Áutor número 2",
                             Visible = true
                         });
@@ -228,12 +225,12 @@ namespace FoodiePal.Server.Migrations
                     b.Property<bool>("Deleted")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Url")
                         .IsRequired()
@@ -250,9 +247,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3467),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9148),
                             Name = "Breakfast",
                             Url = "breakfast",
                             Visible = true
@@ -260,9 +256,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3512),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9151),
                             Name = "Meals",
                             Url = "meals",
                             Visible = true
@@ -270,9 +265,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 3,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3515),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9153),
                             Name = "Dinner",
                             Url = "dinner",
                             Visible = true
@@ -293,12 +287,6 @@ namespace FoodiePal.Server.Migrations
                     b.Property<bool>("Deleted")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("MassUnitId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -312,12 +300,13 @@ namespace FoodiePal.Server.Migrations
                     b.Property<int>("RecipeId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MassUnitId");
 
                     b.HasIndex("ProductId");
 
@@ -329,10 +318,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3628),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9268),
-                            MassUnitId = 1,
                             Name = "Avena",
                             ProductId = 1,
                             Quantity = 50.0,
@@ -342,10 +329,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3631),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9272),
-                            MassUnitId = 1,
                             Name = "Yogur griego",
                             ProductId = 2,
                             Quantity = 0.14999999999999999,
@@ -368,9 +353,6 @@ namespace FoodiePal.Server.Migrations
                     b.Property<bool>("Deleted")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("MassUnitEquivalentFactorName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -378,6 +360,9 @@ namespace FoodiePal.Server.Migrations
                     b.Property<string>("MassUnitParentName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<double>("Value")
                         .HasColumnType("float");
@@ -407,9 +392,6 @@ namespace FoodiePal.Server.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -417,6 +399,9 @@ namespace FoodiePal.Server.Migrations
                     b.Property<string>("PostFix")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
@@ -429,9 +414,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3589),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9229),
                             Name = "Miligramos",
                             PostFix = "mg",
                             Visible = true
@@ -439,9 +423,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3592),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9232),
                             Name = "Centigramos",
                             PostFix = "cg",
                             Visible = true
@@ -449,9 +432,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 3,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3594),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9235),
                             Name = "Gramos",
                             PostFix = "g",
                             Visible = true
@@ -459,9 +441,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 4,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3597),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9237),
                             Name = "Kilogramos",
                             PostFix = "kg",
                             Visible = true
@@ -469,9 +450,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 5,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3599),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9240),
                             Name = "Quintal",
                             PostFix = "q",
                             Visible = true
@@ -479,9 +459,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 6,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3601),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9242),
                             Name = "Tonelada",
                             PostFix = "t",
                             Visible = true
@@ -489,9 +468,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 7,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3603),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9245),
                             Name = "Onza",
                             PostFix = "oz",
                             Visible = true
@@ -499,9 +477,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 8,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3606),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9247),
                             Name = "Libra",
                             PostFix = "lb",
                             Visible = true
@@ -509,9 +486,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 9,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3608),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9250),
                             Name = "TableSpoon",
                             PostFix = "tbsp",
                             Visible = true
@@ -519,9 +495,8 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 10,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3610),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9252),
                             Name = "TeaSpoon",
                             PostFix = "tsp",
                             Visible = true
@@ -546,15 +521,15 @@ namespace FoodiePal.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductTypeId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
@@ -569,10 +544,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3549),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9190),
                             Name = "Avena",
                             ProductTypeId = 4,
                             Visible = true
@@ -580,10 +554,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3553),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9193),
                             Name = "Yogur griego",
                             ProductTypeId = 3,
                             Visible = true
@@ -608,12 +581,12 @@ namespace FoodiePal.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
@@ -626,40 +599,36 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3565),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9207),
                             Name = "Verduras",
                             Visible = true
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3568),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9210),
                             Name = "Frutas",
                             Visible = true
                         },
                         new
                         {
                             Id = 3,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3570),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9212),
                             Name = "Yogur",
                             Visible = true
                         },
                         new
                         {
                             Id = 4,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3573),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9215),
                             Name = "Cereales",
                             Visible = true
                         });
@@ -686,12 +655,12 @@ namespace FoodiePal.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
@@ -707,10 +676,9 @@ namespace FoodiePal.Server.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3673),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9335),
                             Name = "Receta de prueba",
                             Visible = true
                         });
@@ -730,12 +698,12 @@ namespace FoodiePal.Server.Migrations
                     b.Property<bool>("Deleted")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
@@ -748,27 +716,24 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3246),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(8909),
                             Name = "Admin",
                             Visible = true
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3286),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(8945),
                             Name = "Free",
                             Visible = true
                         },
                         new
                         {
                             Id = 3,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3288),
                             Deleted = false,
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(8947),
                             Name = "Premium",
                             Visible = true
                         });
@@ -792,15 +757,15 @@ namespace FoodiePal.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RecipeId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
@@ -815,10 +780,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3650),
                             Deleted = false,
                             Description = "Coge un bol y echa 150 gramos de yogur griego",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9313),
                             Name = "Destapa el yogur griego",
                             RecipeId = 1,
                             Visible = true
@@ -826,10 +790,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3653),
                             Deleted = false,
                             Description = "Echa 50 gramos de avena en el bol",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9316),
                             Name = "Echa la avena",
                             RecipeId = 1,
                             Visible = true
@@ -837,10 +800,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 3,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3655),
                             Deleted = false,
                             Description = "¡Remuevelo todo y prepárate para un desayuno lleno de energía!",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9319),
                             Name = "¡A comer!",
                             RecipeId = 1,
                             Visible = true
@@ -877,9 +839,6 @@ namespace FoodiePal.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<byte[]>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
@@ -890,6 +849,9 @@ namespace FoodiePal.Server.Migrations
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Visible")
                         .HasColumnType("bit");
@@ -904,13 +866,12 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3418),
                             Deleted = false,
                             Email = "jorge.diaz@fakeMail.com",
                             FirstName = "Jorge",
                             LastName1 = "Díaz",
                             LastName2 = "González",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9098),
                             PasswordHash = new byte[] { 49, 50, 51, 52, 53, 54, 55, 56, 57, 47, 97 },
                             PasswordSalt = new byte[] { 83, 97, 108, 116 },
                             RoleId = 1,
@@ -919,13 +880,12 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3441),
                             Deleted = false,
                             Email = "natalia.murillo@fakeMail.com",
                             FirstName = "Natalia",
                             LastName1 = "Murillo",
                             LastName2 = "Palazón",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9124),
                             PasswordHash = new byte[] { 55, 56, 57, 52, 53, 54, 49, 50, 51 },
                             PasswordSalt = new byte[] { 83, 97, 108, 116, 121 },
                             RoleId = 3,
@@ -934,13 +894,12 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 3,
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 8, 26, 15, 22, 40, 203, DateTimeKind.Local).AddTicks(3447),
                             Deleted = false,
                             Email = "mar.casal@fakeMail.com",
                             FirstName = "Mar",
                             LastName1 = "Casal",
                             LastName2 = "Vilches",
-                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 1, 15, 355, DateTimeKind.Local).AddTicks(9129),
                             PasswordHash = new byte[] { 49, 50, 51, 52, 53, 54, 55, 56, 57, 47, 97 },
                             PasswordSalt = new byte[] { 70, 111, 111, 100, 105, 101, 80, 97, 108 },
                             RoleId = 2,
@@ -989,12 +948,6 @@ namespace FoodiePal.Server.Migrations
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.Ingredient", b =>
                 {
-                    b.HasOne("FoodiePal.Shared.Entities.MassUnit", "MassUnit")
-                        .WithMany("Ingredients")
-                        .HasForeignKey("MassUnitId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("FoodiePal.Shared.Entities.Product", "Product")
                         .WithMany("Ingredients")
                         .HasForeignKey("ProductId")
@@ -1006,8 +959,6 @@ namespace FoodiePal.Server.Migrations
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("MassUnit");
 
                     b.Navigation("Product");
 
@@ -1076,11 +1027,6 @@ namespace FoodiePal.Server.Migrations
             modelBuilder.Entity("FoodiePal.Shared.Entities.Category", b =>
                 {
                     b.Navigation("Recipes");
-                });
-
-            modelBuilder.Entity("FoodiePal.Shared.Entities.MassUnit", b =>
-                {
-                    b.Navigation("Ingredients");
                 });
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.Product", b =>

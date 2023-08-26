@@ -22,6 +22,8 @@ namespace FoodiePal.Server.Database
         public DbSet<Role> Roles { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<MassUnit>MassUnits{ get; set; }
+        public DbSet<MassEquivalence> MassEquivalences{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

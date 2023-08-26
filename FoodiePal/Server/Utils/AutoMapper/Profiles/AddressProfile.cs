@@ -35,7 +35,7 @@ namespace FoodiePal.Server.Utils.AutoMapper.Profiles
                     opt => opt.MapFrom(src => src.CreationDate)
                 ).ForMember(
                     dest => dest.UpdateDate,
-                    opt => opt.MapFrom(src => src.UpdateDate)
+                    opt => opt.MapFrom(src => src.LastUpdateDate)
                 ).ForMember(
                     dest => dest.Deleted,
                     opt => opt.MapFrom(src => src.Deleted)
@@ -73,7 +73,7 @@ namespace FoodiePal.Server.Utils.AutoMapper.Profiles
                     dest => dest.CreationDate,
                     opt => opt.MapFrom(src => src.CreationDate)
                 ).ForMember(
-                    dest => dest.UpdateDate,
+                    dest => dest.LastUpdateDate,
                     opt => opt.MapFrom(src => src.UpdateDate)
                 ).ForMember(
                     dest => dest.Deleted,

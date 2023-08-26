@@ -8,20 +8,23 @@ using FoodiePal.Shared.Enums;
 
 namespace FoodiePal.Shared.Entities
 {
-    public class Ingredient:BaseEntity
+    public class Ingredient : BaseEntity
     {
         public string Name { get; set; }
+        
         public double Quantity { get; set; }
-        public UnitType UnitOfMeasurement { get; set; }
-
         //FKs
+
+        public int MassUnitId { get; set; }
+        public MassUnit MassUnit { get; set; }
+
         public int ProductId { get; set; }
         public Product Product { get; set; }
 
         public int RecipeId { get; set; }
-        public Recipe Recipe{ get; set; }
+        public Recipe Recipe { get; set; }
 
-       
+
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using FoodiePal.Server.Extensions;
 using FoodiePal.Shared.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using System.Text;
 
 namespace FoodiePal.Server.Database
@@ -27,8 +28,10 @@ namespace FoodiePal.Server.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
-
+            modelBuilder.Entity<MassUnit>()
+                        .HasMany(e => e.MassEquivalences)
+                        .WithMany(e => e.MassUnits)
+                        .UsingEntity<MassUnitMassEquivalence>();
             //Extension method to keep cleen this class
             modelBuilder.Seed();
         }

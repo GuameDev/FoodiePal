@@ -4,6 +4,7 @@ using FoodiePal.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodiePal.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230826145723_SeedMassUnitsData")]
+    partial class SeedMassUnitsData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,6 +103,7 @@ namespace FoodiePal.Server.Migrations
                             Deleted = false,
                             FirstName = "Jorge",
                             LastName = "Díaz",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8310),
                             Street = "Calle Valeriano Alcalá",
                             UserId = 1,
                             Visible = true,
@@ -114,6 +118,7 @@ namespace FoodiePal.Server.Migrations
                             Deleted = false,
                             FirstName = "María",
                             LastName = "Martínez",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8317),
                             Street = "Calle Valeriano Alcalá",
                             UserId = 1,
                             Visible = true,
@@ -128,6 +133,7 @@ namespace FoodiePal.Server.Migrations
                             Deleted = false,
                             FirstName = "Natalia",
                             LastName = "Murillo",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8321),
                             Street = "Calle Paco Palazón",
                             UserId = 2,
                             Visible = true,
@@ -142,6 +148,7 @@ namespace FoodiePal.Server.Migrations
                             Deleted = false,
                             FirstName = "César",
                             LastName = "Sánchez",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8324),
                             Street = "Calle Paco Palazón",
                             UserId = 2,
                             Visible = true,
@@ -193,6 +200,7 @@ namespace FoodiePal.Server.Migrations
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
                             Email = "Author1@fakeEmail.com",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8448),
                             Name = "Áutor número 1",
                             Visible = true
                         },
@@ -203,6 +211,7 @@ namespace FoodiePal.Server.Migrations
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
                             Email = "Author2@fakeEmail.com",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8453),
                             Name = "Áutor número 2",
                             Visible = true
                         });
@@ -246,6 +255,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 1,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8420),
                             Name = "Breakfast",
                             Url = "breakfast",
                             Visible = true
@@ -255,6 +265,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 2,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8424),
                             Name = "Meals",
                             Url = "meals",
                             Visible = true
@@ -264,6 +275,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 3,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8427),
                             Name = "Dinner",
                             Url = "dinner",
                             Visible = true
@@ -322,6 +334,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 1,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 954, DateTimeKind.Local).AddTicks(6838),
                             MassUnitId = 1,
                             Name = "Avena",
                             ProductId = 1,
@@ -334,6 +347,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 2,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 954, DateTimeKind.Local).AddTicks(6852),
                             MassUnitId = 1,
                             Name = "Yogur griego",
                             ProductId = 2,
@@ -382,8 +396,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7187),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8643),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8640),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Miligramos",
                             Value = 1.0,
@@ -392,8 +407,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7227),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8650),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8647),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Miligramos",
                             Value = 0.10000000000000001,
@@ -402,8 +418,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 3,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7229),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8655),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8653),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Miligramos",
                             Value = 0.001,
@@ -412,8 +429,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 4,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7232),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8660),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8658),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Miligramos",
                             Value = 9.9999999999999995E-07,
@@ -422,8 +440,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 5,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7235),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8666),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8663),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Miligramos",
                             Value = 1E-08,
@@ -432,8 +451,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 6,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7237),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8671),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8669),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Miligramos",
                             Value = 1.0000000000000001E-09,
@@ -442,8 +462,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 7,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7240),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8677),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8674),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Miligramos",
                             Value = 3.5274000000000001E-05,
@@ -452,8 +473,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 8,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7242),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8682),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8680),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Miligramos",
                             Value = 2.2046200000000002E-06,
@@ -462,8 +484,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 9,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7244),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8687),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8685),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Miligramos",
                             Value = 0.067627999999999994,
@@ -472,8 +495,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 10,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7247),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8693),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8691),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Miligramos",
                             Value = 0.20288400000000001,
@@ -482,8 +506,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 11,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7249),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8699),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8696),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Centigramos",
                             Value = 10.0,
@@ -492,8 +517,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 12,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7252),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8705),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8702),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Centigramos",
                             Value = 1.0,
@@ -502,8 +528,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 13,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7254),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8711),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8708),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Centigramos",
                             Value = 0.01,
@@ -512,8 +539,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 14,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7257),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8716),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8714),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Centigramos",
                             Value = 1.0000000000000001E-05,
@@ -522,8 +550,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 15,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7259),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8721),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8719),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Centigramos",
                             Value = 9.9999999999999995E-08,
@@ -532,8 +561,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 16,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7262),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8727),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8725),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Centigramos",
                             Value = 1E-08,
@@ -542,8 +572,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 17,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7264),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8733),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8731),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Centigramos",
                             Value = 0.00035273999999999999,
@@ -552,8 +583,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 18,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7267),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8738),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8736),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Centigramos",
                             Value = 2.2046199999999999E-05,
@@ -562,8 +594,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 19,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7290),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8744),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8742),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Centigramos",
                             Value = 0.0067628000000000002,
@@ -572,8 +605,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 20,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7293),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8749),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8747),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Centigramos",
                             Value = 0.020288400000000002,
@@ -582,8 +616,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 21,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7296),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8755),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8752),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Gramos",
                             Value = 1000.0,
@@ -592,8 +627,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 22,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7298),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8760),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8758),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Gramos",
                             Value = 100.0,
@@ -602,8 +638,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 23,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7301),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8766),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8763),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Gramos",
                             Value = 1.0,
@@ -612,8 +649,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 24,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7303),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8771),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8769),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Gramos",
                             Value = 0.001,
@@ -622,8 +660,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 25,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7305),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8776),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8774),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Gramos",
                             Value = 1.0000000000000001E-05,
@@ -632,8 +671,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 26,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7308),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8782),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8779),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Gramos",
                             Value = 9.9999999999999995E-08,
@@ -642,8 +682,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 27,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7310),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8788),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8785),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Gramos",
                             Value = 0.03527396,
@@ -652,8 +693,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 28,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7313),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8793),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8791),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Gramos",
                             Value = 0.00220462,
@@ -662,8 +704,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 29,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7315),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8798),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8796),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Gramos",
                             Value = 0.067627999999999994,
@@ -672,8 +715,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 30,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7318),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8804),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8801),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Gramos",
                             Value = 0.20288400000000001,
@@ -682,8 +726,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 31,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7320),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8809),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8807),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Kilogramos",
                             Value = 1000000.0,
@@ -692,8 +737,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 32,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7322),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8815),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8812),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Kilogramos",
                             Value = 100000.0,
@@ -702,8 +748,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 33,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7325),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8820),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8818),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Kilogramos",
                             Value = 1000.0,
@@ -712,8 +759,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 34,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7327),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8826),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8823),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Kilogramos",
                             Value = 1.0,
@@ -722,8 +770,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 35,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7330),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8832),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8829),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Kilogramos",
                             Value = 0.01,
@@ -732,8 +781,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 36,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7332),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8838),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8835),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Kilogramos",
                             Value = 1.0000000000000001E-05,
@@ -742,8 +792,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 37,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7335),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8843),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8841),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Kilogramos",
                             Value = 35.273960000000002,
@@ -752,8 +803,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 38,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7337),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8849),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8846),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Kilogramos",
                             Value = 2.2046199999999998,
@@ -762,8 +814,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 39,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7340),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8854),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8852),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Kilogramos",
                             Value = 67628.0,
@@ -772,8 +825,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 40,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7342),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8860),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8857),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Kilogramos",
                             Value = 202884.0,
@@ -782,8 +836,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 41,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7345),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8865),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8862),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Quintal",
                             Value = 100000000.0,
@@ -792,8 +847,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 42,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7347),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8870),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8868),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Quintal",
                             Value = 10000000.0,
@@ -802,8 +858,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 43,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7349),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8876),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8874),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Quintal",
                             Value = 1000000.0,
@@ -812,8 +869,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 44,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7352),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8881),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8879),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Quintal",
                             Value = 1000.0,
@@ -822,8 +880,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 45,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7354),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8887),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8884),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Quintal",
                             Value = 1.0,
@@ -832,8 +891,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 46,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7357),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8892),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8890),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Quintal",
                             Value = 0.001,
@@ -842,8 +902,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 47,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7359),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8898),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8895),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Quintal",
                             Value = 35273.959999999999,
@@ -852,8 +913,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 48,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7362),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8903),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8901),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Quintal",
                             Value = 2204.6199999999999,
@@ -862,8 +924,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 49,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7364),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8908),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8906),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Quintal",
                             Value = 676280.0,
@@ -872,8 +935,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 50,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7366),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8914),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8911),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Quintal",
                             Value = 2028840.0,
@@ -882,8 +946,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 51,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7369),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8919),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8917),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Tonelada",
                             Value = 1000000000.0,
@@ -892,8 +957,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 52,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7371),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8925),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8922),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Tonelada",
                             Value = 100000000.0,
@@ -902,8 +968,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 53,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7374),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8960),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8957),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Tonelada",
                             Value = 10000000.0,
@@ -912,8 +979,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 54,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7376),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8965),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8963),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Tonelada",
                             Value = 1000000.0,
@@ -922,8 +990,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 55,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7378),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8971),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8969),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Tonelada",
                             Value = 1000.0,
@@ -932,8 +1001,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 56,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7381),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8977),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8974),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Tonelada",
                             Value = 1.0,
@@ -942,8 +1012,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 57,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7383),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8982),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8980),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Tonelada",
                             Value = 3527396.2000000002,
@@ -952,8 +1023,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 58,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7386),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8987),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8985),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Tonelada",
                             Value = 220462.26199999999,
@@ -962,8 +1034,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 59,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7389),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8993),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8990),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Tonelada",
                             Value = 67628000.0,
@@ -972,8 +1045,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 60,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7391),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8999),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8996),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Tonelada",
                             Value = 202884000.0,
@@ -982,8 +1056,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 61,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7393),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9005),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9002),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Onza",
                             Value = 28349.523099999999,
@@ -992,8 +1067,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 62,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7396),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9011),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9008),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Onza",
                             Value = 2834.9523100000001,
@@ -1002,8 +1078,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 63,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7398),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9017),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9014),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Onza",
                             Value = 28.349523099999999,
@@ -1012,8 +1089,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 64,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7401),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9023),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9020),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Onza",
                             Value = 0.028349523099999999,
@@ -1022,8 +1100,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 65,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7403),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9028),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9025),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Onza",
                             Value = 0.0002834952,
@@ -1032,8 +1111,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 66,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7406),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9034),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9031),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Onza",
                             Value = 2.8349519999999999E-06,
@@ -1042,8 +1122,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 67,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7408),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9040),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9037),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Onza",
                             Value = 1.0,
@@ -1052,8 +1133,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 68,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7410),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9045),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9043),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Onza",
                             Value = 0.0625,
@@ -1062,8 +1144,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 69,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7413),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9051),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9049),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Onza",
                             Value = 2.0,
@@ -1072,8 +1155,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 70,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7415),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9057),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9055),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Onza",
                             Value = 6.0,
@@ -1082,8 +1166,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 71,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7418),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9063),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9060),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Libras",
                             Value = 453592.37,
@@ -1092,8 +1177,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 72,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7420),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9069),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9066),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Libras",
                             Value = 45359.237000000001,
@@ -1102,8 +1188,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 73,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7422),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9075),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9072),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Libras",
                             Value = 453.59237000000002,
@@ -1112,8 +1199,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 74,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7425),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9081),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9078),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Libras",
                             Value = 0.45359237000000002,
@@ -1122,8 +1210,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 75,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7428),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9087),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9084),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Libras",
                             Value = 0.0045359236999999997,
@@ -1132,8 +1221,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 76,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7430),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9093),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9090),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Libras",
                             Value = 4.5359236999999999E-05,
@@ -1142,8 +1232,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 77,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7433),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9098),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9096),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Libras",
                             Value = 16.0,
@@ -1152,8 +1243,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 78,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7435),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9104),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9101),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Libras",
                             Value = 1.0,
@@ -1162,8 +1254,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 79,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7437),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9110),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9107),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Libras",
                             Value = 32.0,
@@ -1172,8 +1265,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 80,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7440),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9115),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9113),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Libras",
                             Value = 96.0,
@@ -1182,8 +1276,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 81,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7442),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9120),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9118),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Tablespoon",
                             Value = 15000.0,
@@ -1192,8 +1287,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 82,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7445),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9127),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9124),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Tablespoon",
                             Value = 1500.0,
@@ -1202,8 +1298,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 83,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7447),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9133),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9130),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Tablespoon",
                             Value = 15.0,
@@ -1212,8 +1309,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 84,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7450),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9139),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9137),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Tablespoon",
                             Value = 0.014999999999999999,
@@ -1222,8 +1320,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 85,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7452),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9146),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9143),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Tablespoon",
                             Value = 0.00014999999999999999,
@@ -1232,8 +1331,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 86,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7455),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9152),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9149),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Tablespoon",
                             Value = 1.5E-06,
@@ -1242,8 +1342,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 87,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7457),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9159),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9156),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Tablespoon",
                             Value = 0.52742999999999995,
@@ -1252,8 +1353,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 88,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7459),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9165),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9162),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Tablespoon",
                             Value = 0.032150699999999997,
@@ -1262,8 +1364,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 89,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7462),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9171),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9169),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Tablespoon",
                             Value = 1.0,
@@ -1272,8 +1375,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 90,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7464),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9176),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9174),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Tablespoon",
                             Value = 3.0,
@@ -1282,8 +1386,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 91,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7467),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9183),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9180),
                             MassUnitEquivalentFactorName = "Miligramos",
                             MassUnitParentName = "Teaspoon",
                             Value = 5000.0,
@@ -1292,8 +1397,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 92,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7491),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9189),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9186),
                             MassUnitEquivalentFactorName = "Centigramos",
                             MassUnitParentName = "Teaspoon",
                             Value = 500.0,
@@ -1302,8 +1408,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 93,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7494),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9194),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9192),
                             MassUnitEquivalentFactorName = "Gramos",
                             MassUnitParentName = "Teaspoon",
                             Value = 5.0,
@@ -1312,8 +1419,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 94,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7496),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9200),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9198),
                             MassUnitEquivalentFactorName = "Kilogramos",
                             MassUnitParentName = "Teaspoon",
                             Value = 0.0050000000000000001,
@@ -1322,8 +1430,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 95,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7499),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9207),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9205),
                             MassUnitEquivalentFactorName = "Quintal",
                             MassUnitParentName = "Teaspoon",
                             Value = 5.0000000000000002E-05,
@@ -1332,8 +1441,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 96,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7501),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9213),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9211),
                             MassUnitEquivalentFactorName = "Tonelada",
                             MassUnitParentName = "Teaspoon",
                             Value = 4.9999999999999998E-07,
@@ -1342,8 +1452,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 97,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7504),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9219),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9217),
                             MassUnitEquivalentFactorName = "Onza",
                             MassUnitParentName = "Teaspoon",
                             Value = 0.175146,
@@ -1352,8 +1463,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 98,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7506),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9226),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9223),
                             MassUnitEquivalentFactorName = "Libras",
                             MassUnitParentName = "Teaspoon",
                             Value = 0.0100584,
@@ -1362,8 +1474,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 99,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7510),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9232),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9229),
                             MassUnitEquivalentFactorName = "Tablespoon",
                             MassUnitParentName = "Teaspoon",
                             Value = 0.33333299999999999,
@@ -1372,8 +1485,9 @@ namespace FoodiePal.Server.Migrations
                         new
                         {
                             Id = 100,
-                            CreationDate = new DateTime(2023, 8, 26, 17, 24, 23, 908, DateTimeKind.Local).AddTicks(7512),
+                            CreationDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9239),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9236),
                             MassUnitEquivalentFactorName = "Teaspoon",
                             MassUnitParentName = "Teaspoon",
                             Value = 1.0,
@@ -1422,6 +1536,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 1,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8537),
                             Name = "Miligramos",
                             PostFix = "mg",
                             Visible = true
@@ -1431,6 +1546,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 2,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8541),
                             Name = "Centigramos",
                             PostFix = "cg",
                             Visible = true
@@ -1440,6 +1556,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 3,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8545),
                             Name = "Gramos",
                             PostFix = "g",
                             Visible = true
@@ -1449,6 +1566,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 4,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8592),
                             Name = "Kilogramos",
                             PostFix = "kg",
                             Visible = true
@@ -1458,6 +1576,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 5,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8595),
                             Name = "Quintal",
                             PostFix = "q",
                             Visible = true
@@ -1467,6 +1586,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 6,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8599),
                             Name = "Tonelada",
                             PostFix = "t",
                             Visible = true
@@ -1476,6 +1596,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 7,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8602),
                             Name = "Onza",
                             PostFix = "oz",
                             Visible = true
@@ -1485,6 +1606,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 8,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8605),
                             Name = "Libra",
                             PostFix = "lb",
                             Visible = true
@@ -1494,6 +1616,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 9,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8608),
                             Name = "TableSpoon",
                             PostFix = "tbsp",
                             Visible = true
@@ -1503,6 +1626,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 10,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8611),
                             Name = "TeaSpoon",
                             PostFix = "tsp",
                             Visible = true
@@ -1537,10 +1661,6 @@ namespace FoodiePal.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MassEquivalenceId");
-
-                    b.HasIndex("MassUnitId");
-
                     b.ToTable("MassUnitMassEquivalence");
 
                     b.HasData(
@@ -1549,6 +1669,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 1,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9274),
                             MassEquivalenceId = 1,
                             MassUnitId = 1,
                             Visible = true
@@ -1558,6 +1679,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 2,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9281),
                             MassEquivalenceId = 2,
                             MassUnitId = 1,
                             Visible = true
@@ -1567,6 +1689,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 3,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9284),
                             MassEquivalenceId = 3,
                             MassUnitId = 1,
                             Visible = true
@@ -1576,6 +1699,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 4,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9287),
                             MassEquivalenceId = 4,
                             MassUnitId = 1,
                             Visible = true
@@ -1585,6 +1709,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 5,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9289),
                             MassEquivalenceId = 5,
                             MassUnitId = 1,
                             Visible = true
@@ -1594,6 +1719,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 6,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9292),
                             MassEquivalenceId = 6,
                             MassUnitId = 1,
                             Visible = true
@@ -1603,6 +1729,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 7,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9321),
                             MassEquivalenceId = 7,
                             MassUnitId = 1,
                             Visible = true
@@ -1612,6 +1739,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 8,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9325),
                             MassEquivalenceId = 8,
                             MassUnitId = 1,
                             Visible = true
@@ -1621,6 +1749,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 9,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9328),
                             MassEquivalenceId = 9,
                             MassUnitId = 1,
                             Visible = true
@@ -1630,8 +1759,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 10,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9332),
                             MassEquivalenceId = 10,
-                            MassUnitId = 1,
+                            MassUnitId = 2,
                             Visible = true
                         },
                         new
@@ -1639,6 +1769,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 11,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9335),
                             MassEquivalenceId = 11,
                             MassUnitId = 2,
                             Visible = true
@@ -1648,6 +1779,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 12,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9338),
                             MassEquivalenceId = 12,
                             MassUnitId = 2,
                             Visible = true
@@ -1657,6 +1789,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 13,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9341),
                             MassEquivalenceId = 13,
                             MassUnitId = 2,
                             Visible = true
@@ -1666,6 +1799,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 14,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9344),
                             MassEquivalenceId = 14,
                             MassUnitId = 2,
                             Visible = true
@@ -1675,6 +1809,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 15,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9347),
                             MassEquivalenceId = 15,
                             MassUnitId = 2,
                             Visible = true
@@ -1684,6 +1819,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 16,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9350),
                             MassEquivalenceId = 16,
                             MassUnitId = 2,
                             Visible = true
@@ -1693,6 +1829,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 17,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9353),
                             MassEquivalenceId = 17,
                             MassUnitId = 2,
                             Visible = true
@@ -1702,6 +1839,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 18,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9357),
                             MassEquivalenceId = 18,
                             MassUnitId = 2,
                             Visible = true
@@ -1711,6 +1849,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 19,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9360),
                             MassEquivalenceId = 19,
                             MassUnitId = 2,
                             Visible = true
@@ -1720,8 +1859,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 20,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9363),
                             MassEquivalenceId = 20,
-                            MassUnitId = 2,
+                            MassUnitId = 3,
                             Visible = true
                         },
                         new
@@ -1729,6 +1869,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 21,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9366),
                             MassEquivalenceId = 21,
                             MassUnitId = 3,
                             Visible = true
@@ -1738,6 +1879,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 22,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9369),
                             MassEquivalenceId = 22,
                             MassUnitId = 3,
                             Visible = true
@@ -1747,6 +1889,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 23,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9371),
                             MassEquivalenceId = 23,
                             MassUnitId = 3,
                             Visible = true
@@ -1756,6 +1899,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 24,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9375),
                             MassEquivalenceId = 24,
                             MassUnitId = 3,
                             Visible = true
@@ -1765,6 +1909,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 25,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9378),
                             MassEquivalenceId = 25,
                             MassUnitId = 3,
                             Visible = true
@@ -1774,6 +1919,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 26,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9381),
                             MassEquivalenceId = 26,
                             MassUnitId = 3,
                             Visible = true
@@ -1783,6 +1929,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 27,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9383),
                             MassEquivalenceId = 27,
                             MassUnitId = 3,
                             Visible = true
@@ -1792,6 +1939,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 28,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9386),
                             MassEquivalenceId = 28,
                             MassUnitId = 3,
                             Visible = true
@@ -1801,6 +1949,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 29,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9389),
                             MassEquivalenceId = 29,
                             MassUnitId = 3,
                             Visible = true
@@ -1810,8 +1959,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 30,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9392),
                             MassEquivalenceId = 30,
-                            MassUnitId = 3,
+                            MassUnitId = 4,
                             Visible = true
                         },
                         new
@@ -1819,6 +1969,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 31,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9395),
                             MassEquivalenceId = 31,
                             MassUnitId = 4,
                             Visible = true
@@ -1828,6 +1979,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 32,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9398),
                             MassEquivalenceId = 32,
                             MassUnitId = 4,
                             Visible = true
@@ -1837,6 +1989,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 33,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9401),
                             MassEquivalenceId = 33,
                             MassUnitId = 4,
                             Visible = true
@@ -1846,6 +1999,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 34,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9405),
                             MassEquivalenceId = 34,
                             MassUnitId = 4,
                             Visible = true
@@ -1855,6 +2009,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 35,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9408),
                             MassEquivalenceId = 35,
                             MassUnitId = 4,
                             Visible = true
@@ -1864,6 +2019,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 36,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9411),
                             MassEquivalenceId = 36,
                             MassUnitId = 4,
                             Visible = true
@@ -1873,6 +2029,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 37,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9414),
                             MassEquivalenceId = 37,
                             MassUnitId = 4,
                             Visible = true
@@ -1882,6 +2039,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 38,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9417),
                             MassEquivalenceId = 38,
                             MassUnitId = 4,
                             Visible = true
@@ -1891,6 +2049,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 39,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9420),
                             MassEquivalenceId = 39,
                             MassUnitId = 4,
                             Visible = true
@@ -1900,8 +2059,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 40,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9423),
                             MassEquivalenceId = 40,
-                            MassUnitId = 4,
+                            MassUnitId = 5,
                             Visible = true
                         },
                         new
@@ -1909,6 +2069,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 41,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9426),
                             MassEquivalenceId = 41,
                             MassUnitId = 5,
                             Visible = true
@@ -1918,6 +2079,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 42,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9429),
                             MassEquivalenceId = 42,
                             MassUnitId = 5,
                             Visible = true
@@ -1927,6 +2089,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 43,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9432),
                             MassEquivalenceId = 43,
                             MassUnitId = 5,
                             Visible = true
@@ -1936,6 +2099,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 44,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9435),
                             MassEquivalenceId = 44,
                             MassUnitId = 5,
                             Visible = true
@@ -1945,6 +2109,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 45,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9438),
                             MassEquivalenceId = 45,
                             MassUnitId = 5,
                             Visible = true
@@ -1954,6 +2119,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 46,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9441),
                             MassEquivalenceId = 46,
                             MassUnitId = 5,
                             Visible = true
@@ -1963,6 +2129,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 47,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9444),
                             MassEquivalenceId = 47,
                             MassUnitId = 5,
                             Visible = true
@@ -1972,6 +2139,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 48,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9447),
                             MassEquivalenceId = 48,
                             MassUnitId = 5,
                             Visible = true
@@ -1981,6 +2149,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 49,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9450),
                             MassEquivalenceId = 49,
                             MassUnitId = 5,
                             Visible = true
@@ -1990,8 +2159,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 50,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9453),
                             MassEquivalenceId = 50,
-                            MassUnitId = 5,
+                            MassUnitId = 6,
                             Visible = true
                         },
                         new
@@ -1999,6 +2169,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 51,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9456),
                             MassEquivalenceId = 51,
                             MassUnitId = 6,
                             Visible = true
@@ -2008,6 +2179,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 52,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9459),
                             MassEquivalenceId = 52,
                             MassUnitId = 6,
                             Visible = true
@@ -2017,6 +2189,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 53,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9462),
                             MassEquivalenceId = 53,
                             MassUnitId = 6,
                             Visible = true
@@ -2026,6 +2199,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 54,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9465),
                             MassEquivalenceId = 54,
                             MassUnitId = 6,
                             Visible = true
@@ -2035,6 +2209,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 55,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9468),
                             MassEquivalenceId = 55,
                             MassUnitId = 6,
                             Visible = true
@@ -2044,6 +2219,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 56,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9471),
                             MassEquivalenceId = 56,
                             MassUnitId = 6,
                             Visible = true
@@ -2053,6 +2229,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 57,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9474),
                             MassEquivalenceId = 57,
                             MassUnitId = 6,
                             Visible = true
@@ -2062,6 +2239,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 58,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9477),
                             MassEquivalenceId = 58,
                             MassUnitId = 6,
                             Visible = true
@@ -2071,6 +2249,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 59,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9480),
                             MassEquivalenceId = 59,
                             MassUnitId = 6,
                             Visible = true
@@ -2080,8 +2259,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 60,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9483),
                             MassEquivalenceId = 60,
-                            MassUnitId = 6,
+                            MassUnitId = 7,
                             Visible = true
                         },
                         new
@@ -2089,6 +2269,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 61,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9486),
                             MassEquivalenceId = 61,
                             MassUnitId = 7,
                             Visible = true
@@ -2098,6 +2279,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 62,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9489),
                             MassEquivalenceId = 62,
                             MassUnitId = 7,
                             Visible = true
@@ -2107,6 +2289,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 63,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9492),
                             MassEquivalenceId = 63,
                             MassUnitId = 7,
                             Visible = true
@@ -2116,6 +2299,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 64,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9495),
                             MassEquivalenceId = 64,
                             MassUnitId = 7,
                             Visible = true
@@ -2125,6 +2309,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 65,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9498),
                             MassEquivalenceId = 65,
                             MassUnitId = 7,
                             Visible = true
@@ -2134,6 +2319,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 66,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9502),
                             MassEquivalenceId = 66,
                             MassUnitId = 7,
                             Visible = true
@@ -2143,6 +2329,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 67,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9505),
                             MassEquivalenceId = 67,
                             MassUnitId = 7,
                             Visible = true
@@ -2152,6 +2339,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 68,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9508),
                             MassEquivalenceId = 68,
                             MassUnitId = 7,
                             Visible = true
@@ -2161,6 +2349,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 69,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9511),
                             MassEquivalenceId = 69,
                             MassUnitId = 7,
                             Visible = true
@@ -2170,8 +2359,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 70,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9514),
                             MassEquivalenceId = 70,
-                            MassUnitId = 7,
+                            MassUnitId = 8,
                             Visible = true
                         },
                         new
@@ -2179,6 +2369,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 71,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9517),
                             MassEquivalenceId = 71,
                             MassUnitId = 8,
                             Visible = true
@@ -2188,6 +2379,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 72,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9520),
                             MassEquivalenceId = 72,
                             MassUnitId = 8,
                             Visible = true
@@ -2197,6 +2389,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 73,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9523),
                             MassEquivalenceId = 73,
                             MassUnitId = 8,
                             Visible = true
@@ -2206,6 +2399,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 74,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9526),
                             MassEquivalenceId = 74,
                             MassUnitId = 8,
                             Visible = true
@@ -2215,6 +2409,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 75,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9529),
                             MassEquivalenceId = 75,
                             MassUnitId = 8,
                             Visible = true
@@ -2224,6 +2419,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 76,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9531),
                             MassEquivalenceId = 76,
                             MassUnitId = 8,
                             Visible = true
@@ -2233,6 +2429,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 77,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9534),
                             MassEquivalenceId = 77,
                             MassUnitId = 8,
                             Visible = true
@@ -2242,6 +2439,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 78,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9537),
                             MassEquivalenceId = 78,
                             MassUnitId = 8,
                             Visible = true
@@ -2251,6 +2449,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 79,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9540),
                             MassEquivalenceId = 79,
                             MassUnitId = 8,
                             Visible = true
@@ -2260,8 +2459,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 80,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9543),
                             MassEquivalenceId = 80,
-                            MassUnitId = 8,
+                            MassUnitId = 9,
                             Visible = true
                         },
                         new
@@ -2269,6 +2469,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 81,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9546),
                             MassEquivalenceId = 81,
                             MassUnitId = 9,
                             Visible = true
@@ -2278,6 +2479,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 82,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9548),
                             MassEquivalenceId = 82,
                             MassUnitId = 9,
                             Visible = true
@@ -2287,6 +2489,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 83,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9551),
                             MassEquivalenceId = 83,
                             MassUnitId = 9,
                             Visible = true
@@ -2296,6 +2499,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 84,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9553),
                             MassEquivalenceId = 84,
                             MassUnitId = 9,
                             Visible = true
@@ -2305,6 +2509,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 85,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9556),
                             MassEquivalenceId = 85,
                             MassUnitId = 9,
                             Visible = true
@@ -2314,6 +2519,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 86,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9559),
                             MassEquivalenceId = 86,
                             MassUnitId = 9,
                             Visible = true
@@ -2323,6 +2529,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 87,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9562),
                             MassEquivalenceId = 87,
                             MassUnitId = 9,
                             Visible = true
@@ -2332,6 +2539,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 88,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9564),
                             MassEquivalenceId = 88,
                             MassUnitId = 9,
                             Visible = true
@@ -2341,6 +2549,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 89,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9567),
                             MassEquivalenceId = 89,
                             MassUnitId = 9,
                             Visible = true
@@ -2350,8 +2559,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 90,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9570),
                             MassEquivalenceId = 90,
-                            MassUnitId = 9,
+                            MassUnitId = 10,
                             Visible = true
                         },
                         new
@@ -2359,6 +2569,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 91,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9572),
                             MassEquivalenceId = 91,
                             MassUnitId = 10,
                             Visible = true
@@ -2368,6 +2579,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 92,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9575),
                             MassEquivalenceId = 92,
                             MassUnitId = 10,
                             Visible = true
@@ -2377,6 +2589,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 93,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9577),
                             MassEquivalenceId = 93,
                             MassUnitId = 10,
                             Visible = true
@@ -2386,6 +2599,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 94,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9580),
                             MassEquivalenceId = 94,
                             MassUnitId = 10,
                             Visible = true
@@ -2395,6 +2609,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 95,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9582),
                             MassEquivalenceId = 95,
                             MassUnitId = 10,
                             Visible = true
@@ -2404,6 +2619,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 96,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9585),
                             MassEquivalenceId = 96,
                             MassUnitId = 10,
                             Visible = true
@@ -2413,6 +2629,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 97,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9587),
                             MassEquivalenceId = 97,
                             MassUnitId = 10,
                             Visible = true
@@ -2422,6 +2639,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 98,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9590),
                             MassEquivalenceId = 98,
                             MassUnitId = 10,
                             Visible = true
@@ -2431,6 +2649,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 99,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9593),
                             MassEquivalenceId = 99,
                             MassUnitId = 10,
                             Visible = true
@@ -2440,8 +2659,9 @@ namespace FoodiePal.Server.Migrations
                             Id = 100,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(9596),
                             MassEquivalenceId = 100,
-                            MassUnitId = 10,
+                            MassUnitId = 11,
                             Visible = true
                         });
                 });
@@ -2490,6 +2710,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8480),
                             Name = "Avena",
                             ProductTypeId = 4,
                             Visible = true
@@ -2500,6 +2721,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8484),
                             Name = "Yogur griego",
                             ProductTypeId = 3,
                             Visible = true
@@ -2545,6 +2767,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8504),
                             Name = "Verduras",
                             Visible = true
                         },
@@ -2554,6 +2777,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8509),
                             Name = "Frutas",
                             Visible = true
                         },
@@ -2563,6 +2787,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8511),
                             Name = "Yogur",
                             Visible = true
                         },
@@ -2572,6 +2797,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8514),
                             Name = "Cereales",
                             Visible = true
                         });
@@ -2622,6 +2848,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 954, DateTimeKind.Local).AddTicks(6952),
                             Name = "Receta de prueba",
                             Visible = true
                         });
@@ -2661,6 +2888,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 1,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8067),
                             Name = "Admin",
                             Visible = true
                         },
@@ -2669,6 +2897,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 2,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8125),
                             Name = "Free",
                             Visible = true
                         },
@@ -2677,6 +2906,7 @@ namespace FoodiePal.Server.Migrations
                             Id = 3,
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8128),
                             Name = "Premium",
                             Visible = true
                         });
@@ -2726,6 +2956,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "Coge un bol y echa 150 gramos de yogur griego",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 954, DateTimeKind.Local).AddTicks(6926),
                             Name = "Destapa el yogur griego",
                             RecipeId = 1,
                             Visible = true
@@ -2736,6 +2967,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "Echa 50 gramos de avena en el bol",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 954, DateTimeKind.Local).AddTicks(6930),
                             Name = "Echa la avena",
                             RecipeId = 1,
                             Visible = true
@@ -2746,6 +2978,7 @@ namespace FoodiePal.Server.Migrations
                             CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Description = "¡Remuevelo todo y prepárate para un desayuno lleno de energía!",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 954, DateTimeKind.Local).AddTicks(6933),
                             Name = "¡A comer!",
                             RecipeId = 1,
                             Visible = true
@@ -2815,6 +3048,7 @@ namespace FoodiePal.Server.Migrations
                             FirstName = "Jorge",
                             LastName1 = "Díaz",
                             LastName2 = "González",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8353),
                             PasswordHash = new byte[] { 49, 50, 51, 52, 53, 54, 55, 56, 57, 47, 97 },
                             PasswordSalt = new byte[] { 83, 97, 108, 116 },
                             RoleId = 1,
@@ -2829,6 +3063,7 @@ namespace FoodiePal.Server.Migrations
                             FirstName = "Natalia",
                             LastName1 = "Murillo",
                             LastName2 = "Palazón",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8383),
                             PasswordHash = new byte[] { 55, 56, 57, 52, 53, 54, 49, 50, 51 },
                             PasswordSalt = new byte[] { 83, 97, 108, 116, 121 },
                             RoleId = 3,
@@ -2843,11 +3078,27 @@ namespace FoodiePal.Server.Migrations
                             FirstName = "Mar",
                             LastName1 = "Casal",
                             LastName2 = "Vilches",
+                            LastUpdateDate = new DateTime(2023, 8, 26, 16, 57, 22, 953, DateTimeKind.Local).AddTicks(8391),
                             PasswordHash = new byte[] { 49, 50, 51, 52, 53, 54, 55, 56, 57, 47, 97 },
                             PasswordSalt = new byte[] { 70, 111, 111, 100, 105, 101, 80, 97, 108 },
                             RoleId = 2,
                             Visible = true
                         });
+                });
+
+            modelBuilder.Entity("MassEquivalenceMassUnit", b =>
+                {
+                    b.Property<int>("MassEquivalencesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MassUnitsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MassEquivalencesId", "MassUnitsId");
+
+                    b.HasIndex("MassUnitsId");
+
+                    b.ToTable("MassEquivalenceMassUnit");
                 });
 
             modelBuilder.Entity("AuthorRecipe", b =>
@@ -2901,21 +3152,6 @@ namespace FoodiePal.Server.Migrations
                     b.Navigation("Recipe");
                 });
 
-            modelBuilder.Entity("FoodiePal.Shared.Entities.MassUnitMassEquivalence", b =>
-                {
-                    b.HasOne("FoodiePal.Shared.Entities.MassEquivalence", null)
-                        .WithMany()
-                        .HasForeignKey("MassEquivalenceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FoodiePal.Shared.Entities.MassUnit", null)
-                        .WithMany()
-                        .HasForeignKey("MassUnitId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("FoodiePal.Shared.Entities.Product", b =>
                 {
                     b.HasOne("FoodiePal.Shared.Entities.ProductType", "ProductType")
@@ -2958,6 +3194,21 @@ namespace FoodiePal.Server.Migrations
                         .IsRequired();
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("MassEquivalenceMassUnit", b =>
+                {
+                    b.HasOne("FoodiePal.Shared.Entities.MassEquivalence", null)
+                        .WithMany()
+                        .HasForeignKey("MassEquivalencesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FoodiePal.Shared.Entities.MassUnit", null)
+                        .WithMany()
+                        .HasForeignKey("MassUnitsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("FoodiePal.Shared.Entities.Category", b =>

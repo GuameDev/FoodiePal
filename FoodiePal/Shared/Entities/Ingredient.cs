@@ -13,9 +13,9 @@ namespace FoodiePal.Shared.Entities
         public string Name { get; set; }
         
         public double Quantity { get; set; }
-        //FKs
 
-        public int MassUnitId { get; set; }
+        //FKs
+        public int MassUnitId { get; set; } = 3;
         public MassUnit MassUnit { get; set; }
 
         public int ProductId { get; set; }

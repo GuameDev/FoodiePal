@@ -364,12 +364,12 @@ namespace FoodiePal.Server.Extensions
                         MassUnitParentName = "Miligramos",
                         MassUnitEquivalentFactorName = "Teaspoon",
                         Value = 0.202884
-                    }
+                    },
             #endregion Miligramos
             #region Centigramos
                     new MassEquivalence()
                     {
-                        Id = 1,
+                        Id = 11,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Miligramos",
@@ -377,14 +377,14 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 2,
+                        Id = 12,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Centigramos",
                         Value = 1
                     }, new MassEquivalence()
                     {
-                        Id = 3,
+                        Id = 13,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Gramos",
@@ -392,21 +392,21 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 4,
+                        Id = 14,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Kilogramos",
                         Value = 1e-5
                     }, new MassEquivalence()
                     {
-                        Id = 5,
+                        Id = 15,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Quintal",
                         Value = 1e-7
                     }, new MassEquivalence()
                     {
-                        Id = 6,
+                        Id = 16,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Tonelada",
@@ -414,14 +414,14 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 7,
+                        Id = 17,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Onza",
                         Value = 0.00035274
                     }, new MassEquivalence()
                     {
-                        Id = 8,
+                        Id = 18,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Libras",
@@ -429,24 +429,24 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 9,
+                        Id = 19,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Tablespoon",
                         Value = 0.0067628
                     }, new MassEquivalence()
                     {
-                        Id = 10,
+                        Id = 20,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Centigramos",
                         MassUnitEquivalentFactorName = "Teaspoon",
                         Value = 0.0202884
-                    }
+                    },
                     #endregion Centigramos
             #region Gramos
                     new MassEquivalence()
                     {
-                        Id = 1,
+                        Id = 21,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Miligramos",
@@ -454,14 +454,14 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 2,
+                        Id = 22,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Centigramos",
                         Value = 100
                     }, new MassEquivalence()
                     {
-                        Id = 3,
+                        Id = 23,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Gramos",
@@ -469,21 +469,21 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 4,
+                        Id = 24,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Kilogramos",
                         Value = 0.001
                     }, new MassEquivalence()
                     {
-                        Id = 5,
+                        Id = 25,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Quintal",
                         Value = 0.00001
                     }, new MassEquivalence()
                     {
-                        Id = 6,
+                        Id =26,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Tonelada",
@@ -491,14 +491,14 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 7,
+                        Id = 27,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Onza",
                         Value = 0.03527396
                     }, new MassEquivalence()
                     {
-                        Id = 8,
+                        Id = 28,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Libras",
@@ -506,24 +506,24 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 9,
+                        Id = 29,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Tablespoon",
                         Value = 0.067628
                     }, new MassEquivalence()
                     {
-                        Id = 10,
+                        Id = 30,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Gramos",
                         MassUnitEquivalentFactorName = "Teaspoon",
                         Value = 0.202884
-                    }
+                    },
                     #endregion Gramos
             #region Kilogramos
                     new MassEquivalence()
                     {
-                        Id = 1,
+                        Id = 31,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Miligramos",
@@ -531,14 +531,14 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 2,
+                        Id = 32,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Centigramos",
                         Value = 100000
                     }, new MassEquivalence()
                     {
-                        Id = 3,
+                        Id = 33,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Gramos",
@@ -546,21 +546,21 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 4,
+                        Id = 34,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Kilogramos",
                         Value = 1
                     }, new MassEquivalence()
                     {
-                        Id = 5,
+                        Id = 35,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Quintal",
                         Value = 0.01
                     }, new MassEquivalence()
                     {
-                        Id = 6,
+                        Id = 36,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Tonelada",
@@ -568,14 +568,14 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 7,
+                        Id = 37,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Onza",
                         Value = 35.27396
                     }, new MassEquivalence()
                     {
-                        Id = 8,
+                        Id = 38,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Libras",
@@ -583,24 +583,24 @@ namespace FoodiePal.Server.Extensions
                     },
                     new MassEquivalence()
                     {
-                        Id = 9,
+                        Id = 39,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Tablespoon",
                         Value = 67628
                     }, new MassEquivalence()
                     {
-                        Id = 10,
+                        Id = 40,
                         CreationDate = DateTime.Now,
                         MassUnitParentName = "Kilogramos",
                         MassUnitEquivalentFactorName = "Teaspoon",
                         Value = 202884
-                    }
+                    },
                     #endregion Kilogramos
             #region Quintal
             new MassEquivalence()
             {
-                Id = 1,
+                Id = 41,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Miligramos",
@@ -608,14 +608,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 2,
+                Id = 42,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Centigramos",
                 Value = 1e7
             }, new MassEquivalence()
             {
-                Id = 3,
+                Id = 43,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Gramos",
@@ -623,21 +623,21 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 4,
+                Id = 44,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Kilogramos",
                 Value = 1000
             }, new MassEquivalence()
             {
-                Id = 5,
+                Id = 45,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Quintal",
                 Value = 1
             }, new MassEquivalence()
             {
-                Id = 6,
+                Id = 46,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Tonelada",
@@ -645,14 +645,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 7,
+                Id = 47,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Onza",
                 Value = 35273.96
             }, new MassEquivalence()
             {
-                Id = 8,
+                Id = 48,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Libras",
@@ -660,24 +660,24 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 9,
+                Id = 49,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Tablespoon",
                 Value = 676280
             }, new MassEquivalence()
             {
-                Id = 10,
+                Id = 50,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Quintal",
                 MassUnitEquivalentFactorName = "Teaspoon",
                 Value = 2028840
-            }
+            },
             #endregion Quintal
             #region Tonelada
             new MassEquivalence()
             {
-                Id = 1,
+                Id = 51,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Miligramos",
@@ -685,14 +685,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 2,
+                Id = 52,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Centigramos",
                 Value = 1e8
             }, new MassEquivalence()
             {
-                Id = 3,
+                Id = 53,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Gramos",
@@ -700,21 +700,21 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 4,
+                Id = 54,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Kilogramos",
                 Value = 1000000
             }, new MassEquivalence()
             {
-                Id = 5,
+                Id = 55,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Quintal",
                 Value = 1000
             }, new MassEquivalence()
             {
-                Id = 6,
+                Id = 56,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Tonelada",
@@ -722,14 +722,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 7,
+                Id = 57,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Onza",
                 Value = 3527396.2
             }, new MassEquivalence()
             {
-                Id = 8,
+                Id = 58,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Libras",
@@ -737,24 +737,24 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 9,
+                Id = 59,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Tablespoon",
                 Value = 67628000
             }, new MassEquivalence()
             {
-                Id = 10,
+                Id = 60,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tonelada",
                 MassUnitEquivalentFactorName = "Teaspoon",
                 Value = 202884000
-            }
+            },
             #endregion Quintal
             #region Onza
             new MassEquivalence()
             {
-                Id = 1,
+                Id = 61,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Miligramos",
@@ -762,14 +762,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 2,
+                Id = 62,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Centigramos",
                 Value = 2834.95231
             }, new MassEquivalence()
             {
-                Id = 3,
+                Id = 63,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Gramos",
@@ -777,21 +777,21 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 4,
+                Id = 64,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Kilogramos",
                 Value = 0.0283495231
             }, new MassEquivalence()
             {
-                Id = 5,
+                Id = 65,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Quintal",
                 Value = 0.0002834952
             }, new MassEquivalence()
             {
-                Id = 6,
+                Id = 66,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Tonelada",
@@ -799,14 +799,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 7,
+                Id = 67,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Onza",
                 Value = 1
             }, new MassEquivalence()
             {
-                Id = 8,
+                Id = 68,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Libras",
@@ -814,24 +814,24 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 9,
+                Id = 69,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Tablespoon",
                 Value = 2
             }, new MassEquivalence()
             {
-                Id = 10,
+                Id = 70,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Onza",
                 MassUnitEquivalentFactorName = "Teaspoon",
                 Value = 6
-            }
+            },
             #endregion Onza
             #region Libras
             new MassEquivalence()
             {
-                Id = 1,
+                Id = 71,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Miligramos",
@@ -839,14 +839,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 2,
+                Id = 72,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Centigramos",
                 Value = 45359.237
             }, new MassEquivalence()
             {
-                Id = 3,
+                Id = 73,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Gramos",
@@ -854,21 +854,21 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 4,
+                Id =74,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Kilogramos",
                 Value = 0.45359237
             }, new MassEquivalence()
             {
-                Id = 5,
+                Id = 75,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Quintal",
                 Value = 0.0045359237
             }, new MassEquivalence()
             {
-                Id = 6,
+                Id = 76,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Tonelada",
@@ -876,14 +876,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 7,
+                Id = 77,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Onza",
                 Value = 16
             }, new MassEquivalence()
             {
-                Id = 8,
+                Id =78,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Libras",
@@ -891,24 +891,24 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 9,
+                Id = 79,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Tablespoon",
                 Value = 32
             }, new MassEquivalence()
             {
-                Id = 10,
+                Id = 80,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Libras",
                 MassUnitEquivalentFactorName = "Teaspoon",
                 Value = 96
-            }
+            },
             #endregion Libras
             #region Tablespoon
             new MassEquivalence()
             {
-                Id = 1,
+                Id = 81,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Miligramos",
@@ -916,14 +916,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 2,
+                Id = 82,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Centigramos",
                 Value = 1500
             }, new MassEquivalence()
             {
-                Id = 3,
+                Id =83,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Gramos",
@@ -931,21 +931,21 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 4,
+                Id = 84,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Kilogramos",
                 Value = 0.015
             }, new MassEquivalence()
             {
-                Id = 5,
+                Id = 85,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Quintal",
                 Value = 0.00015
             }, new MassEquivalence()
             {
-                Id = 6,
+                Id = 86,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Tonelada",
@@ -953,14 +953,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 7,
+                Id = 87,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Onza",
                 Value = 0.52743
             }, new MassEquivalence()
             {
-                Id = 8,
+                Id = 88,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Libras",
@@ -968,24 +968,24 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 9,
+                Id = 89,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Tablespoon",
                 Value = 1
             }, new MassEquivalence()
             {
-                Id = 10,
+                Id = 90,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Tablespoon",
                 MassUnitEquivalentFactorName = "Teaspoon",
                 Value = 3
-            }
+            },
             #endregion Tablespoon
             #region Teaspoon
             new MassEquivalence()
             {
-                Id = 1,
+                Id = 91,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Miligramos",
@@ -993,14 +993,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 2,
+                Id =92,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Centigramos",
                 Value = 500
             }, new MassEquivalence()
             {
-                Id = 3,
+                Id = 93,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Gramos",
@@ -1008,21 +1008,21 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 4,
+                Id = 94,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Kilogramos",
                 Value = 0.005
             }, new MassEquivalence()
             {
-                Id = 5,
+                Id = 95,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Quintal",
                 Value = 0.00005
             }, new MassEquivalence()
             {
-                Id = 6,
+                Id = 96,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Tonelada",
@@ -1030,14 +1030,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 7,
+                Id = 97,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Onza",
                 Value = 0.175146
             }, new MassEquivalence()
             {
-                Id = 8,
+                Id = 98,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Libras",
@@ -1045,14 +1045,14 @@ namespace FoodiePal.Server.Extensions
             },
             new MassEquivalence()
             {
-                Id = 9,
+                Id = 99,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Tablespoon",
                 Value = 0.333333
             }, new MassEquivalence()
             {
-                Id = 10,
+                Id = 100,
                 CreationDate = DateTime.Now,
                 MassUnitParentName = "Teaspoon",
                 MassUnitEquivalentFactorName = "Teaspoon",
@@ -1063,8 +1063,46 @@ namespace FoodiePal.Server.Extensions
 
             #endregion MassEquivalences
 
+            #region MassUnitsMassEquivalences
+
+            var massUnitMassEquivalences = new List<MassUnitMassEquivalence>();
+
+            for (int i = 1; i <= 100; i++)
+            {
+
+                int massUnitId = i > 9 ? i/10 +1 : 1 ;
+
+                if(i <= 10)
+                {
+                    massUnitId = 1;
+                }else if(i %10 == 0)
+                {
+                    massUnitId = i/10;
+                }
+                else
+                {
+                    massUnitId = i / 10 + 1;
+                }
+                
+
+                massUnitMassEquivalences.Add(
+                    new MassUnitMassEquivalence()
+                    {
+                        Id = i,
+                        MassUnitId= massUnitId,
+                        MassEquivalenceId = i
+                        
+                    }
+                    );    
+            }
+          
+
+            modelBuilder.Entity<MassUnitMassEquivalence>().HasData(massUnitMassEquivalences);
+
+            #endregion MassUnitsMassEquivalences
+
             #region Ingredients
-            modelBuilder.Entity<Ingredient>().HasData(
+           modelBuilder.Entity<Ingredient>().HasData(
                  new Ingredient()
                  {
                      Id = 1,
